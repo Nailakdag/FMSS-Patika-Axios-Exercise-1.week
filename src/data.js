@@ -15,5 +15,8 @@ const getPost = async (number, setPost) => {
   );
   setPost(post);
 };
-
-export { getUsers, getPost };
+const getData = async (number, setPost, setUsers) => {
+  await getUsers(number, setUsers);
+  await getPost(number, setPost);
+};
+export { getData };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { getUsers, getPost } from "./data";
+import { getData } from "./data";
 
 function App() {
   // Statelerin tanımlandığı kısım
@@ -13,8 +13,7 @@ function App() {
   // Number değiştikçe tekrar istek atmak için useEffect kullanıldı
   useEffect(() => {
     if (number > 0) {
-      getPost(number, setPost);
-      getUsers(number, setUsers);
+      getData(number, setPost, setUsers);
     }
   }, [number]);
   return (
